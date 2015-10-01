@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/162/trunk/nehet/daemon/Socket
+END
+TCPClientSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/TCPClientSocket.cpp
+END
+UDPClientSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/UDPClientSocket.cpp
+END
+Socket.sln
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/Socket.sln
+END
+TCPServerSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162/trunk/nehet/daemon/Socket/TCPServerSocket.cpp
+END
+Packet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/Packet.cpp
+END
+UDPServerSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/UDPServerSocket.cpp
+END
+Socket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/Socket.cpp
+END
+Socket.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/156/trunk/nehet/daemon/Socket/Socket.vcproj
+END
+Socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/162/trunk/nehet/daemon/Socket/Socket.h
+END

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:components="components.*"
+	layout="vertical"
+	width="100%" height="100%"
+	styleName="samplePaddingStyle" xmlns:cameraConfig="components.cameraConfig.*">
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+			import mx.binding.utils.BindingUtils;
+			import mx.managers.PopUpManager;
+			import mx.core.IFlexDisplayObject;
+    		import mx.controls.Alert;
+    		import mx.utils.UIDUtil;
+    		
+    		private var camera:Camera;
+    		private var mic:Microphone;
+    		private var nc:NetConnection;
+    		private var nsOut:NetStream;
+
+			//private var cameraConfigPopup : CameraConfigView;    		
+    		private var userUID:String = UIDUtil.createUID();
+    		
+    		//private var appModel:ApplicationModel = ApplicationModel.getInstance();
+    		
+    		private static const msgConfig:String = "Sorry, but a camera was not detected.  Please connect first";
+    
+    		private function doConnect() : void
+    		{
+    			
+    			//Creating a new NetConnection
+    			nc = new NetConnection();
+    			
+    			//Setting the NetConnection's client property to this CameraPublish instance
+    			nc.client = this;
+    			
+    			//Adding an event listener for NET_STATUS which will be dispatched
+    			//when network status changes
+    			nc.addEventListener(NetStatusEvent.NET_STATUS, netStatus);
+    			
+    			
+    			//Connect to the location of your flash media server for example:
+    			//nc.connect("rtmp://fmsexamples.adobe.com/applicationName/instance");
+    			nc.connect("rtmp://localhost/PublishLiveVideo/"+userUID);
+    		}
+    
+    
+        	/**
+        	 * 	This is the handler function of the NetStatusEvent for the NetConnection.  
+        	 * 	Here is where we can find out the connection status and execute actions 
+        	 * 	based on each result. 
+        	 */
+    		private function netStatus(event:NetStatusEvent) : void 
+    		{
+    			var info:Object = event.info;
+    			
+    			//Checking the event.info.code for the current NetConnection status string
+                switch(info.code) 
+                {
+                	
+                	//code == NetConnection.Connect.Success when Netconnection has successfully
+                	//connected
+                	case "NetConnection.Connect.Success":	
+                		if ( doPublishStream() )
+       					{
+       						//Enabling and Disabling controls so 2 streams aren't published 
+                			//and the current stream can be viewed.
+       						btnConnect.enabled = false;
+            				btnView.enabled = true;
+            				publishName.enabled = false;
+            				
+       						Alert.show( "Connection Successful" );
+    	        			Alert.show( "Stream published - " + publishName.text );
+       					}
+            			break;
+            			
+            		//code == NetConnection.Connect.Rejected when Netconnection did
+            		//not have permission to access the application.
+    				case "NetConnection.Connect.Rejected":
+    
+                		Alert.show( "Connection Rejected" );	
+                		
+                		//Enabling and Disabling controls so stream can be published 
+                		//and the unsuccessfully created stream isn't viewed.
+                		btnConnect.enabled = true;
+                		btnView.enabled = false;
+                		break;
+                		
+                	//code == NetConnection.Connect.Failed when Netconnection has failed to connect
+                	//either because your network connection is down or the server address doesn't exist.
+                	case "NetConnection.Connect.Failed":
+                		
+                		Alert.show( "Connection Failed" );	
+                		
+                		//Enabling and Disabling controls so stream can be published 
+                		//and the unsuccessfully created stream isn't viewed.
+                		btnConnect.enabled = true;
+                		btnView.enabled = false;
+                		break;
+                	
+                	//code == NetConnection.Connect.Closed when Netconnection has been closed successfully.
+                	case "NetConnection.Connect.Closed":
+                		
+                		Alert.show( "Connection Closed" );
+                		
+                		//Enabling and Disabling controls so stream can be published 
+                		//and the unsuccessfully created stream isn't viewed.
+                		btnConnect.enabled = true;	
+                		btnView.enabled = false;
+                		break;
+                }
+    		}
+    		
+    		private function handlerCameraStatus( event:StatusEvent ) : void
+    		{
+    			 // This event gets dispatched when the user clicks the "Allow" or "Deny"
+       			// button in the Flash Player Settings dialog box.
+       			Alert.show( event.code );
+    		}
+    		
+    		private function doPublishStream():Boolean
+    		{
+    			//Creating a NetStream to publish the video
+    			nsOut = new NetStream(nc);
+    
+    			//check and make sure that we have a camera
+    			camera = Camera.getCamera();
+    			
+    			//If attaching a camera was unsuccessful...
+    			if ( camera == null )
+    			{
+    				if ( Camera.names.length > 0 )
+    				{
+    					Alert.show( 'The default camera is in use by another application.', 'Error' );
+    					
+    					Alert.show( 'The default camera is in use by another application.' );
+    				}
+    				else
+    				{
+    					Alert.show( 'Please install a camera to use this sample.', 'Error' );
+    					
+    					Alert.show( 'There is no camera installed on your system.' );
+    				}
+    			}
+    			else
+    			{
+    				camera.addEventListener( StatusEvent.STATUS, handlerCameraStatus );
+    				//if the getting the camera was successful attach it to the NetStream
+    				nsOut.attachCamera(camera); 
+    			}
+    			
+    			//check and make sure that we have a mic
+    			mic = Microphone.getMicrophone();
+    			
+    			//If attaching a microphone was unsuccessful...
+    			if ( mic == null )
+    			{
+    				
+    				if ( Microphone.names.length > 0 )
+    				{
+    					
+    					Alert.show( 'The default microphone is in use by another application.' );
+    				}
+    				else
+    				{
+    					
+    					Alert.show( 'There is no microphone installed on your system.' );
+    				}
+    			}
+    			else
+    			{
+    				//if the getting the microphone was successful attach it to the NetStream
+    				nsOut.attachAudio(mic);
+    			}
+    
+    			//we need a video to at least play, so at least a camera
+    			//must be attached.
+    			if ( camera )
+    			{
+    				
+    				//If camera is present, publish the Netstream with the name
+    				//in the publishName TextInput			
+    				nsOut.publish(publishName.text);
+    				
+    				//Attach the video being recorded by the camera to the VideoDisplay component
+    				localVideo.attachCamera(camera);
+            		return true;
+    			}
+    			else
+    			{
+    				
+    				//If no camera was attached (or just a mic) then close the
+    				//NetConnection
+    				nsOut.close();
+    				
+    				//clearing the memory for the NetStream
+    				nsOut = null;
+    				return false;
+    			}
+    		}
+    		
+    		private function doViewStream():void
+    		{
+    			//Disabling the View button and the TextInput for the stream name
+    			btnView.enabled = false;
+    			viewName.enabled = false;
+    			
+    			//Setting the source of the networkVideo VideoDisplay to the address of the
+    			//current stream name that you input in viewName TextInput
+    			networkVideo.source = "rtmp://localhost/PublishLiveVideo/" + userUID + '/' + viewName.text;
+    			
+    			Alert.show( "Viewing stream - " + viewName.text );
+    		}
+    		
+    		/**
+    		 * 	This is a required callback method on the NetConnection.client.  The server 
+    		 * 	calls this if the connection is immedately rejected.  If you don't define this method,
+    		 * 	an error will be thrown.
+    		 */
+    		public function close() : void
+    		{
+    			Alert.show( 'Connection closed.' );
+    		}	
+		
+		]]>
+	</mx:Script>
+	
+	<mx:VDividedBox width="100%" height="100%">
+		
+		<mx:HBox width="100%" height="70%">
+			
+				<!--The VideoDisplay that shows the video that you're recording locally-->
+				<mx:VideoDisplay
+					id="localVideo"
+					width="100%" height="100%"
+					live="true"
+					styleName="horzCent0"/>
+			
+				<mx:ControlBar
+					width="100%"
+					styleName="horzAlignCntr">
+					
+					<!--The Button that will start publishing the stream-->
+					<mx:Button 
+						id="btnConnect" 
+						label="Publish"
+						toolTip="Publish Stream" 
+						click="doConnect()"
+						styleName="publishButton"/>
+					
+					<!--The Textinput for the name of the published NetStream-->
+					<mx:TextInput
+						id="publishName"
+						width="100%"
+						text="sampleStream"/>
+						
+				</mx:ControlBar>
+
+				<mx:VideoDisplay
+					id="networkVideo"
+					width="100%" height="100%"
+					live="true"
+					styleName="horzCent0"/>
+					
+				<mx:ControlBar
+					width="100%"
+					styleName="horzAlignCntr">
+					
+					<!--The Button that will attach the stream to the networkVideo display-->
+					<mx:Button 
+						id="btnView" 
+						enabled="false"
+						label="View"
+						toolTip="View Stream"
+						click="doViewStream()"
+						styleName="viewStreamButton"/>
+					
+					<!--The Textinput for the name of the published NetStream you plan to view-->	
+					<mx:TextInput
+						id="viewName"
+						width="100%"
+						text="sampleStream"/>
+						
+				</mx:ControlBar>
+			
+		</mx:HBox>
+		
+	</mx:VDividedBox>
+	
+</mx:Application>

@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 239
+Debug
+RTP_test
+SipClient.ncb
+SipClient.suo
+SipClient.vcproj.MARTIN-NB.Martin.user
+SipPacket.cpp
+SipPacket.h
+SipRequest.h
+Socket
+Socket_backup-2009-11-17.rar
+Socket_nejde_prelozit-2009-11-10.rar
+api_client_test
+lib
+libosip2
+makemakefile.sh
+
+END

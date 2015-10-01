@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/180/trunk/nehet/daemon/sip
+END
+SIPClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/172/trunk/nehet/daemon/sip/SIPClient.h
+END
+SIPResponse.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/168/trunk/nehet/daemon/sip/SIPResponse.h
+END
+SIPPacket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/176/trunk/nehet/daemon/sip/SIPPacket.cpp
+END
+SipClient.sln
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/147/trunk/nehet/daemon/sip/SipClient.sln
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/179/trunk/nehet/daemon/sip/main.cpp
+END
+SIPRequest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/174/trunk/nehet/daemon/sip/SIPRequest.cpp
+END
+SIPPacket.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/176/trunk/nehet/daemon/sip/SIPPacket.h
+END
+SIPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/178/trunk/nehet/daemon/sip/SIPRequest.h
+END
+SIPClient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/174/trunk/nehet/daemon/sip/SIPClient.cpp
+END
+SIPResponse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/169/trunk/nehet/daemon/sip/SIPResponse.cpp
+END
+SipClient.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/172/trunk/nehet/daemon/sip/SipClient.vcproj
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/180/trunk/nehet/daemon/sip/makefile
+END
+SIPConstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/163/trunk/nehet/daemon/sip/SIPConstants.h
+END

@@ -1,0 +1,156 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>RunConfiguration0-Arguments</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >1935</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>RunConfiguration0-Executable</variable>
+  <value type="QString" >/home/aleshus/madonna/skola/SI/nehet/trunk/nehet/daemon/rtmp/artmp</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-RunConfiguration.name</variable>
+  <value type="QString" >Run</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseTerminal</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserName</variable>
+  <value type="QString" >Run</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetName</variable>
+  <value type="bool" >true</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-WorkingDirectory</variable>
+  <value type="QString" >/home/aleshus/madonna/skola/SI/nehet/trunk/nehet/daemon/rtmp/</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-type</variable>
+  <value type="QString" >ProjectExplorer.CustomExecutableRunConfiguration</value>
+ </data>
+ <data>
+  <variable>activeRunConfiguration</variable>
+  <value type="int" >0</value>
+ </data>
+ <data>
+  <variable>activebuildconfiguration</variable>
+  <value type="QString" >all</value>
+ </data>
+ <data>
+  <variable>buildConfiguration-all</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >all</value>
+   <value key="buildDirectory" type="QString" >/home/aleshus/madonna/skola/SI/nehet/trunk/nehet/daemon/rtmp/</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-all-buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >all</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-O5sgFo9vcf,guid=8f3e137905e14d5907a2f1c94b0912bd</value>
+    <value type="QString" >DERBY_HOME=/opt/java/db</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-nBvYCO/S.gpg-agent:1678:1</value>
+    <value type="QString" >GS_LIB=/home/aleshus/.fonts</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/aleshus/.gtkrc-2.0::/home/aleshus/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/aleshus/.gtkrc::/home/aleshus/.kde4/share/config/gtkrc</value>
+    <value type="QString" >G_BROKEN_FILENAMES=1</value>
+    <value type="QString" >HISTCONTROL=erasedups</value>
+    <value type="QString" >HISTSIZE=1000</value>
+    <value type="QString" >HOME=/home/aleshus</value>
+    <value type="QString" >INPUTRC=/etc/inputrc</value>
+    <value type="QString" >J2SDKDIR=/opt/java</value>
+    <value type="QString" >JAVA_HOME=/opt/java</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=1000</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
+    <value type="QString" >LANG=cs_CZ.utf8</value>
+    <value type="QString" >LC_COLLATE=C</value>
+    <value type="QString" >LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString" >LESS=-R</value>
+    <value type="QString" >LOGNAME=aleshus</value>
+    <value type="QString" >MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins</value>
+    <value type="QString" >OOO_FORCE_DESKTOP=gnome</value>
+    <value type="QString" >PATH=/bin:/usr/bin:/sbin:/usr/sbin:/opt/java/bin:/opt/java/jre/bin:/opt/kde/bin:/usr/bin/perlbin/site:/usr/bin/perlbin/vendor:/usr/bin/perlbin/core:/opt/qt/bin</value>
+    <value type="QString" >PKG_CONFIG_PATH=/usr/lib/pkgconfig:/opt/qt/lib/pkgconfig</value>
+    <value type="QString" >PWD=/home/aleshus</value>
+    <value type="QString" >QTDIR=/opt/qt</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/aleshus/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
+    <value type="QString" >QT_XFT=true</value>
+    <value type="QString" >SESSION_MANAGER=local/Samantha:@/tmp/.ICE-unix/1730,unix/Samantha:/tmp/.ICE-unix/1730</value>
+    <value type="QString" >SHELL=/bin/zsh</value>
+    <value type="QString" >SHLVL=1</value>
+    <value type="QString" >SSH_AGENT_PID=1681</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-nkTylp1680/agent.1680</value>
+    <value type="QString" >USER=aleshus</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XCURSOR_THEME=Oxygen_Zion</value>
+    <value type="QString" >XDG_CACHE_HOME=/home/aleshus/.cache</value>
+    <value type="QString" >XDG_CONFIG_DIRS=/etc/xdg</value>
+    <value type="QString" >XDG_CONFIG_HOME=/home/aleshus/.config</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/share:/usr/local/share:/opt/kde/share</value>
+    <value type="QString" >XDG_DATA_HOME=/home/aleshus/.local/share</value>
+    <value type="QString" >XDG_SESSION_COOKIE=1082b6a133cb3bba7d6c0f0d48cd7f98-1258885819.989078-1918959318</value>
+    <value type="QString" >XDM_MANAGED=method=classic</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" />
+   <value key="abstractProcess.command" type="QString" >make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/aleshus/madonna/skola/SI/nehet/trunk/nehet/daemon/rtmp/</value>
+   <value key="buildTargets" type="bool" >true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >all</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >GenericProjectManager.MakeStep</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray" >System</value>
+ </data>
+ <data>
+  <variable>includePaths</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap" />
+ </data>
+ <data>
+  <variable>toolChain</variable>
+  <value type="QString" >gcc</value>
+ </data>
+</qtcreator>

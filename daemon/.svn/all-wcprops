@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/184/trunk/nehet/daemon
+END
+SessionManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/113/trunk/nehet/daemon/SessionManager.cpp
+END
+Rtmp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/113/trunk/nehet/daemon/Rtmp.cpp
+END
+Session.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/113/trunk/nehet/daemon/Session.cpp
+END
+SessionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/113/trunk/nehet/daemon/SessionManager.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/113/trunk/nehet/daemon/main.cpp
+END
+Rtmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/113/trunk/nehet/daemon/Rtmp.h
+END
+Session.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/113/trunk/nehet/daemon/Session.h
+END
+doxygen.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/167/trunk/nehet/daemon/doxygen.cfg
+END
+Debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/113/trunk/nehet/daemon/Debug.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/113/trunk/nehet/daemon/Makefile
+END
